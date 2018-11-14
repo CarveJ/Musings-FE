@@ -1,0 +1,11 @@
+.sideScrollBar {
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+}
+
+.blogPostTitlesScrollBar, .hashtagsScrollBar{
+  display:grid;
+  justify-content:center;
+  align-content: center;
+}

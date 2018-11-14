@@ -1,0 +1,22 @@
+.BlogPostCard {
+  display:grid;
+  grid-template-columns: minmax(300px,1fr);
+  grid-template-rows: 1fr 1fr 1fr;
+  border: 1px solid black;
+  margin:5vw;
+}
+
+.cardTitle {
+ grid-column: 1/-1
+}
+
+.cardContent {
+  background-color: #f1f1f1;
+  grid-row:2;
+}
+
+.extras{
+  grid-row:3;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(100px,1fr))
+}
