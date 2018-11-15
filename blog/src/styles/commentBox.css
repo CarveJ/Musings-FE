@@ -1,0 +1,11 @@
+.theCommentBox {
+  border: 2px solid black;
+  width:100vw;
+  height:25vh;
+  margin: 2.5vw;
+}
+
+.textArea {
+  width:1fr;
+  height:1fr;
+}

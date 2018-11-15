@@ -1,0 +1,18 @@
+.commentSection {
+  width:1fr;
+  margin:2.5vw;
+  display:grid;
+  grid-template-columns: 1fr
+}
+
+.theComment {
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2,1fr);
+  background-color: #666;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
