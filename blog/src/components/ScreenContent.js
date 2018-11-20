@@ -4,7 +4,7 @@ import '../styles/screenContent.css';
 const ScreenContent = ({content="Some grade \"A\" bs as per"}) => (
   <div>
     <div className="theContent">
-      {content}
+      { content }
     </div>
   </div>
 );

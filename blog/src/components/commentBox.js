@@ -1,12 +1,40 @@
-import React from 'react';
+import React, { Component } from 'react';
+import '../styles/commentBox.css'
 
-const CommentBox = ({onSubmit= f=>console.log(f)}) => (
-  <div>
-    <div className="theCommentBox">
-      <input type="text" className="textArea">
-      </input>
-    </div>
-  </div>
-);
+class CommentBox extends Component {
+
+  constructor(props){
+    super(props)
+    this.textInput = React.createRef()
+    this.handleChange = this.handleChange.bind(this)
+    this.state = {
+      text:''
+    }
+  }
+
+  handleChange(event){
+    event.preventDefault()
+    this.setState({text:event.value})
+  }
+
+  handleKeyUp(event){
+    if(event.keyCode === 13){
+      console.log('update the dom')
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <div className="theCommentBox">
+          <input type="text" value={this.state.text}
+            onChange={this.handleChange} onKeyUp={this.handleKeyUp} id="textArea" className="textArea">
+          </input>
+        </div>
+      </div>
+    );
+  }
+
+}
 
 export default CommentBox;

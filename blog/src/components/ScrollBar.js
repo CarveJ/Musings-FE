@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import '../styles/scrollBar.css'
 
 const SideScrollBar = ({hashtags={rap:1},blogPostTitles=['aRandomTitle']}) => {
@@ -7,7 +8,7 @@ const SideScrollBar = ({hashtags={rap:1},blogPostTitles=['aRandomTitle']}) => {
     if(tags){
       return Object.keys(tags).map(keyHash => {
         return(
-          <button class="pure-button" key={keyHash}>
+          <button className="pure-button" key={keyHash}>
             {`#${keyHash}:${tags[keyHash]}`}
           </button>
         )
@@ -18,8 +19,8 @@ const SideScrollBar = ({hashtags={rap:1},blogPostTitles=['aRandomTitle']}) => {
     if(titles){
       return titles.map( title => {
         return (
-          <button className="pure-button">
-            {title}
+          <button className="pure-button" key={title}>
+            <Link to={`/blogPost/${title}`}> {title} </Link>
           </button>
         )
       })

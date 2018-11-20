@@ -1,11 +1,11 @@
 .theCommentBox {
   border: 2px solid black;
-  width:100vw;
+  width: 90vw;
   height:25vh;
-  margin: 2.5vw;
 }
 
 .textArea {
-  width:1fr;
-  height:1fr;
+  padding:2px;
+  width:89.4vw;
+  height:24.1vh;
 }
