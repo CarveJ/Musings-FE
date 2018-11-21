@@ -7,6 +7,7 @@ class CommentBox extends Component {
     super(props)
     this.textInput = React.createRef()
     this.handleChange = this.handleChange.bind(this)
+    this.handleKeyUp = this.handleKeyUp.bind(this)
     this.state = {
       text:''
     }
@@ -19,7 +20,7 @@ class CommentBox extends Component {
 
   handleKeyUp(event){
     if(event.keyCode === 13){
-      console.log('update the dom')
+      this.props.addComment(this.state.text)
     }
   }
 

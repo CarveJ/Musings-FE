@@ -1,6 +1,8 @@
-export const AddComment = theComment =>({
+export const AddComment = (theComment,blogTitle) => ({
   type:'AddComment',
-  theComment
+  api:true,
+  theComment,
+  blogTitle
 })
 
 export const GetBlogPosts = _ =>({

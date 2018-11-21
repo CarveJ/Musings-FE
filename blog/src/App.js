@@ -2,21 +2,24 @@ import React, { Component } from 'react';
 
 //homescreen views and imported Components
 import Home from './components/Home'
+
 //Screen for Blog Posts imported
 import ScreenForBP from './components/ScreenForBP';
-import { Route } from 'react-router-dom'
+import { BrowserRouter as Router,Route, Link } from 'react-router-dom'
 
 import './App.css';
 
 class App extends Component {
   render() {
     return (
+      <Router>
         <div>
-          <Route path='/home' component={Home}/>
-          <Route path='/blogPost/:postTitle' render={({match})=> < ScreenForBP />}/>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/blogPost/:postTitle' component={ScreenForBP}/>
         </div>
+      </Router>
     );
   }
 }
 
-export default App;
+export default (App);

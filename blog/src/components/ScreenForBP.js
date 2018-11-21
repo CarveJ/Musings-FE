@@ -7,7 +7,11 @@ import ScreenComments from './ScreenComments';
 import CommentBox from './CommentBox';
 
 //importing Redux
+import { connect } from 'react-redux'
 import { AddComment } from '../redux/actions'
+
+//import react-router
+import { Link, withRouter } from 'react-router-dom'
 
 class ScreenForBP extends Component {
 
@@ -19,25 +23,26 @@ class ScreenForBP extends Component {
     }
   }
 
+
   render() {
     return (
       <div className="theScreenForBP">
+        <button className="pure-button"> <Link to='/'> Back </Link> </button>
         <div className="screenContent">
-          <ScreenContent />
+          <ScreenContent content={ this.props.blogPost.content }/>
         </div>
         <div className="clickToCommnet" ref={this.ref} onClick={this.magicCommentBox}> Comment
-          <CommentBox addComment={this.props.AddComment}/>
+          <CommentBox  addComment={ this.props.AddComment }/>
         </div>
         <div className="screenComments">
-          <ScreenComments />
+          <ScreenComments comments={ this.props.blogPost.comments } />
         </div>
       </div>
     );
   }
-
 }
 
-const mapStateToProps = (state, ownProps) =>({
+const mapStateToProps = (state, ownProps) => ({
   blogPost: state.blogPosts[ownProps.match.params.postTitle]
 })
 
@@ -46,4 +51,8 @@ const mapDispatchToProps = dispatch => ({
 })
 
 
-export default ScreenForBP;
+
+
+export default withRouter(connect(
+  mapStateToProps,
+  mapDispatchToProps)(ScreenForBP));

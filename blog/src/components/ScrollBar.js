@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import '../styles/scrollBar.css'
 
-const SideScrollBar = ({hashtags={rap:1},blogPostTitles=['aRandomTitle']}) => {
+const SideScrollBar = ({hashtags={rap:1},blogPostTitles=['aRandomPost']}) => {
 
   const renderHashTags = (tags) => {
     if(tags){
@@ -16,7 +16,7 @@ const SideScrollBar = ({hashtags={rap:1},blogPostTitles=['aRandomTitle']}) => {
     }
 
   const renderBlogPosts = (titles) => {
-    if(titles){
+    if (titles) {
       return titles.map( title => {
         return (
           <button className="pure-button" key={title}>
